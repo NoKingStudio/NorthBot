@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>North Bot</title>
+  <link rel="stylesheet" href="../styles/style.css">
+  <style>
+    /* Style pour masquer le contenu principal jusqu'à ce que le GIF soit affiché */
+    #main-content {
+      display: none;
+    }
+    
+    /* Optionnel : centrer le GIF */
+    #loading-gif {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Section du GIF de chargement -->
+  <div id="loading-gif">
+    <img src="../img/Logo.gif" alt="Loading..." />
+  </div>
+
+  <!-- Contenu principal de la page -->
+  <div id="main-content">
+    <div class="container">
+      <img id="Logo" src="../img/Logo.gif">
+      <h1>North bot</h1>
+      <p>Créé ton bot !</p>
+      <input type="text" id="token-input" placeholder="Entrer votre Token"><br/>
+      
+      <label for="color-picker">Choisissez une couleur :</label><br/>
+      <input type="color" id="color-picker" value="#ffffff">
+      
+      <button id="connect-btn">Connect</button>
+      
+      <div id="bot-info"></div>
+    </div>
+  </div>
+
+  <script>
+    // Attendre 5 secondes avant de cacher le GIF et afficher le contenu principal
+    setTimeout(function() {
+      document.getElementById("loading-gif").style.display = "none";
+      document.getElementById("main-content").style.display = "block";
+    }, 5000); // 5000 ms = 5 secondes
+  </script>
+
+  <script src="../scripts/renderer.js"></script>
+</body>
+</html>
